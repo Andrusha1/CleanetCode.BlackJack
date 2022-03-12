@@ -3,8 +3,8 @@
 
     public interface IOperation
     {
-        string Name { get; }
+        public string Name { get; }
 
-        void Execute();
+        public void Execute();
     }
 }

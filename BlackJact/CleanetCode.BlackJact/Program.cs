@@ -1,9 +1,15 @@
 ﻿namespace Cleanetcode.Blackjack
 {
-    partial class Program
+    class Program
     {
         public static void Main()
         {
+
+            IOperation[] operations = new IOperation[]
+            {
+                new CardGenerator(),
+                new CardDraw()
+            };
 
         }
     }

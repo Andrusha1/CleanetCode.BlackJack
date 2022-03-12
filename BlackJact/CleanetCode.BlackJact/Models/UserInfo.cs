@@ -1,11 +1,8 @@
 ﻿namespace Cleanetcode.Blackjack
 {
-    partial class Program
+    class UserInfo
     {
-        class UserInfo
-        {
-            string Name { get; set; }
-            int Score { get; set; }
-        }
+        string Name { get; set; }
+        int Score { get; set; }
     }
 }
