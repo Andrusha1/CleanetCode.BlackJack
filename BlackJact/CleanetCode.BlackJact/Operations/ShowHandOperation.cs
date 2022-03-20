@@ -6,10 +6,7 @@
         
         public void Execute()
         {
-            CardsStorage cardst = new CardsStorage();
-            Console.WriteLine($"Your hand: ");
-            cardst.ShowCards();
-            Console.WriteLine();
+            
         }
     }
 }

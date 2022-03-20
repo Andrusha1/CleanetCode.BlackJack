@@ -16,6 +16,7 @@
             else
             {
                 score.ScoreUpdate(card);
+                cardst.UserCardAdd(card);
                 cardst.AddCard(card);
                 Console.WriteLine(card);
             }
