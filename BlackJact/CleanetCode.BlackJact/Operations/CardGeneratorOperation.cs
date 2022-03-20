@@ -1,6 +1,6 @@
 ﻿namespace Cleanetcode.Blackjack
 {
-    internal class CardGenerator : IOperation
+    internal class CardGeneratorOperation : IOperation //генератор рандомных карт
     {
         public string Name => "Card generator";
 

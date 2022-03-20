@@ -7,8 +7,9 @@
 
             IOperation[] operations = new IOperation[]
             {
-                new ShowHand(),
-                new OneMore()
+                new LoginOperation(),
+                new ShowHandOperation(),
+                new OneMoreOperation(),
             };
             Menu menu = new Menu(operations);
             Application application = new Application(menu);

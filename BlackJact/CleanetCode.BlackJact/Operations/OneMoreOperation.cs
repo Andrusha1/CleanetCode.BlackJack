@@ -1,19 +1,21 @@
 ﻿namespace Cleanetcode.Blackjack
 {
-    class OneMore : IOperation
+    class OneMoreOperation : IOperation
     {
         public string Name => "One more card";
         public void Execute()
         {
             CardsStorage cardst = new CardsStorage();
+            ScoreCountOperation score = new ScoreCountOperation();
             string card;
-            card = CardGenerator.GetCard();
+            card = CardGeneratorOperation.GetCard();
             if (cardst.isContain(card))
             {
-                card = CardGenerator.GetCard();
+                card = CardGeneratorOperation.GetCard();
             }
             else
             {
+                score.ScoreUpdate(card);
                 cardst.AddCard(card);
                 Console.WriteLine(card);
             }

@@ -25,4 +25,9 @@ class CardsStorage
             Console.Write($"{cards[i]} " );
         }
     }
+
+    public void DropCards()
+    {
+        cards.Clear();
+    }
 }

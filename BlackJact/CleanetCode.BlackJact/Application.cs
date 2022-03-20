@@ -14,6 +14,17 @@
             while (!isQuit)
             {
                 List<string> operationNames = new List<string>();
+                ScoreCountOperation score = new ScoreCountOperation();
+                CardsStorage cardst = new CardsStorage();
+
+                Console.WriteLine($"Current User: {CurrentUser.CurrUser}");
+                Console.WriteLine($"Score: {score.GetScore().ToString()}");
+                if(score.GetScore() > 21)
+                {
+                    Console.WriteLine("Overdraw!\n");
+                    cardst.DropCards();
+                    score.ResetScore();
+                }
                 operationNames.Add("q - close program");
                 operationNames.AddRange(_menu.GetOperationNames());
 

@@ -1,6 +1,6 @@
 ﻿namespace Cleanetcode.Blackjack
 {
-    class ShowHand : IOperation
+    class ShowHandOperation : IOperation
     {
         public string Name => "Show hand";
         
@@ -9,6 +9,7 @@
             CardsStorage cardst = new CardsStorage();
             Console.WriteLine($"Your hand: ");
             cardst.ShowCards();
+            Console.WriteLine();
         }
     }
 }
