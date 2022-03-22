@@ -18,32 +18,52 @@
                 CardsStorage cardst = new CardsStorage();
                 DealersOperation dealer = new DealersOperation();
                 CardsEnoughOperation cardsEnough = new CardsEnoughOperation();
+                EndingGameOperation EndGame = new EndingGameOperation();
 
-                
+
                 Console.WriteLine($"Current User: {CurrentUser.CurrUser}");
-                Console.WriteLine($"Score: {score.GetScore().ToString()}");
-                if(score.GetScore() > 21)
+                Console.WriteLine();
+                if (score.GetScore() > 21)
                 {
-                    Console.WriteLine("Overdraw!\n");
+                    Console.WriteLine($"Overdraw! Your cards:");
+                    cardst.ShowCards();
                     cardst.DropCards();
                     score.ResetScore();
+                    Console.WriteLine("\n");
                 }
+                Console.WriteLine($"Dealer score: {dealer.ShowDScore()}");
                 Console.Write("Dealer's Hand: ");
                 if (cardsEnough.EnoughStatus() == false)
                     Console.WriteLine("** **");
                 else
                 {
                     string Dhand = "";
-                    foreach(string x in DealersOperation.DealerHand)
+                    foreach (string x in DealersOperation.DealerHand)
                     {
                         Dhand += x;
                     }
                     Console.WriteLine($"{Dhand}");
                     dealer.DropDealerHand();
                 }
-                Console.WriteLine($"Dealer score: {dealer.ShowDScore()}"); 
+                Console.WriteLine();
+                Console.WriteLine($"Score: {score.GetScore().ToString()}");
                 Console.WriteLine($"Your hand: ");
                 cardst.ShowCards();
+                Console.WriteLine();
+                if (CardsEnoughOperation.isEnough == true)
+                {
+                    Console.WriteLine();
+                    EndGame.Execute();
+                    cardsEnough.ResetisEnough();
+                    score.ResetScore();
+                    dealer.DResetScore();
+                    cardst.DropCards();
+                    dealer.DropDealerHand();
+                }
+                else
+                {
+
+                }
                 Console.WriteLine();
                 for (int i = 0; i < 6; i++)
                 {

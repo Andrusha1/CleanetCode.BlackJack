@@ -13,7 +13,7 @@
         public void RunDealer()
         {
             {
-                while (DScore <= 18)
+                while (DScore <= ScoreCountOperation.Score)
                 {
                     string card = CardGeneratorOperation.GetCard();
                     if (cardst.isContain(card))
@@ -69,6 +69,11 @@
         public void DropDealerHand()
         {
             DealerHand.Clear();
+        }
+
+        public void DResetScore()
+        {
+            DScore = 0;
         }
     }
 }

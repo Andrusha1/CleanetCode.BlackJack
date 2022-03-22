@@ -10,7 +10,8 @@
                 new LoginOperation(),
                 new ShowHandOperation(),
                 new OneMoreOperation(),
-                new CardsEnoughOperation()
+                new CardsEnoughOperation(),
+                new RefreshScreenOperation()
             };
             Menu menu = new Menu(operations);
             Application application = new Application(menu);

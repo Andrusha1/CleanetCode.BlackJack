@@ -4,7 +4,7 @@
     {
         DealersOperation dealerop = new DealersOperation();
         public string Name => "Enough";
-        static bool isEnough = false;
+        public static bool isEnough = false;
         public void Execute()
         {
             isEnough = true;
@@ -17,6 +17,10 @@
         public void Enough()
         {
             
+        }
+        public void ResetisEnough()
+        {
+            isEnough=false;
         }
     }
 }
