@@ -8,7 +8,6 @@
             IOperation[] operations = new IOperation[]
             {
                 new LoginOperation(),
-                new ShowHandOperation(),
                 new OneMoreOperation(),
                 new CardsEnoughOperation(),
                 new RefreshScreenOperation()
